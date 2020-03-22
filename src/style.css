@@ -1,0 +1,40 @@
+.background-main-color {
+  background: #F9E79F;
+}
+
+.background-sec-cards {
+  background: #ECF0F1;
+}
+
+.color-btn-validator:hover {
+  background: #73C6B6;
+}
+
+.navbar {
+  background: #6F89A7!important;
+}
+
+#main .col h2 {
+  font-family: 'Domine', serif;
+}
+
+/* #main .col h3 { 
+  font-family: 'Monda', sans-serif;
+} */
+
+.div-icon {
+  background: #FCF3CF;
+  border-radius: 30px;
+}
+
+
+
+/* @media (max-width: 575.98px) { 
+  .row {
+    margin: 0!important;
+  }
+  div .col-md {
+    padding: 0!important;
+  }
+
+} */
