@@ -7,29 +7,31 @@ export const homePage = () => {
       <img class='logo-nav' src="./assets/icons/logo-nav.png" width="50" height="50" alt="">
     </a>
   </nav>
-  <main id="main">
+  <div class="container-fluid p-0 d-lg-flex ">
     <div class="container-fluid background-main-color">
       <div class="row">
-        <div class="col text-center pt-2 pb-2">
-        <h2>Validador de tarjetas</h2>
-        <img src='./assets/icons/img-card-main.png' alt=''> 
-      </div>
-      </div>
+        <div class="col text-center pt-2 mt-2 pb-2">
+          <h2>Validador de tarjetas</h2>
+        </div>
+      </div>  
+      <div class="row">
+        <div class="col text-center">
+          <img src="./assets/icons/img-card-main.png" class="img-card" alt=""> 
+        </div>
+      </div>  
       <div class="row">
         <div class="col text-center">
           <button type="button" class="btn btn-primary mb-4">Ir a validar</button>
         </div>
       </div>
     </div>
-  </main>
-  <section id="section-about" class="background-sec-cards">
-    <div class="container">
+    <div class="container-fluid d-lg justify-content-lg-center">
       <div class="row">
-        <div class="col text-center text-uppercase mt-3">
+        <div class="col text-center text-uppercase mt-3 mb-3">
           <h3>Conoce màs</h3>
         </div>
       </div>  
-      <div class="row"> 
+      <div class="row flex-lg-column align-items-lg-center"> 
         <div class="col-md-6 mb-4">
           <div class="card text-center">
             <div class="div-icon mx-auto mt-2" style="width: 60px; height: 60px;">
@@ -54,7 +56,7 @@ export const homePage = () => {
         </div>
       </div>
     </div>
-  </section>
+  </div>  
   `
   return sectionElem;
 }

@@ -18,6 +18,20 @@
   font-family: 'Domine', serif;
 }
 
+@media (min-width: 992px) { 
+ .img-card {
+    width: 200px;
+ }
+
+ .btn {
+   width: 10rem;
+ }
+}
+
+/* #section-about {
+  height: 70vh;
+} */
+
 /* #main .col h3 { 
   font-family: 'Monda', sans-serif;
 } */
