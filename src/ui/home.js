@@ -1,3 +1,4 @@
+import { changeView } from '../lib/routes.js'
 
 export const homePage = () => {
   const sectionElem = document.createElement('section');
@@ -21,7 +22,7 @@ export const homePage = () => {
       </div>  
       <div class="row">
         <div class="col text-center">
-          <button type="button" class="btn btn-primary mb-4">Ir a validar</button>
+          <button type="button" id="goValidator" class="btn btn-primary mb-4">Ir a validar</button>
         </div>
       </div>
     </div>
@@ -58,6 +59,12 @@ export const homePage = () => {
     </div>
   </div>  
   `
+
+  const goValiddator = sectionElem.querySelector('#goValidator')
+  goValiddator.addEventListener('click', () => {
+    changeView('#/validator');
+  })
+
   return sectionElem;
 }
 
