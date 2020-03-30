@@ -9,7 +9,7 @@ export const homePage = () => {
     </a>
   </nav>
   <div class="container-fluid p-0 d-lg-flex ">
-    <div class="container-fluid background-main-color">
+    <div class="container-fluid background-primary-color">
       <div class="row">
         <div class="col text-center pt-2 mt-2 pb-2">
           <h2>Validador de tarjetas</h2>

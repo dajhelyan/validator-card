@@ -1,8 +1,8 @@
-.background-main-color {
+.background-primary-color {
   background: #F9E79F;
 }
 
-.background-sec-cards {
+.background-secundary-color {
   background: #ECF0F1;
 }
 
@@ -56,4 +56,26 @@
 .col .list-instructions {
   padding-left: 0;
   padding-top: 2em;
+}
+
+.cont-form-validator {
+  border: 1px;
+  background: snow;
+  border-radius: 1rem;
+}
+
+.border-input-date {
+  border: 1px solid #ced4da;
+  height: 35px;
+  width: 8rem;
+  padding-top: 6px;
+  border-radius: 5px;
+  height: 38px;
+  
+}
+
+.expiration input {
+  width: 3rem;
+  border: 0;
+  padding-left: 10px;
 }
