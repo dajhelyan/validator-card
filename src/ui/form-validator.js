@@ -1,5 +1,5 @@
-
-
+import { validatorCard } from '../lib/validator.js'
+ 
 export const validatorPage = () => {
   const sectionElem = document.createElement('secction');
 	sectionElem.innerHTML = `
@@ -54,14 +54,24 @@ export const validatorPage = () => {
             <div class="form-row">
               <div class="form-group mx-auto">
                 <h5>Numero de tarjeta</h5>
-                <input type="number" class="form-control" placeholder="xxxxxxxxxxxxxxxxx">
-              </div>
+                <input id="input-card-number" type="number" class="form-control" placeholder="xxxxxxxxxxxxxxxxx">
+                <button id="btn-validate-card" type="button" class="btn btn-primary mb-2">Validar ahora</button>
+                </div>
             </div>
           </form>
         </div>
       </div>
     </div>
 	</div>
-	`
+  `
+
+  //const inputCardValue = document.querySelector('#input card-number').value;
+
+  const captureValueInput = sectionElem.querySelector('#btn-validate-card')
+  captureValueInput.addEventListener('click', () => {
+    const inputCardValue = document.getElementById("input-card-number").value;
+    console.log(validatorCard(inputCardValue), 'kfjjf');
+  })
+
 	return sectionElem;
 }
