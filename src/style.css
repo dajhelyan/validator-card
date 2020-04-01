@@ -64,18 +64,9 @@
   border-radius: 1rem;
 }
 
-.border-input-date {
-  border: 1px solid #ced4da;
-  height: 35px;
-  width: 8rem;
-  padding-top: 6px;
-  border-radius: 5px;
-  height: 38px;
-  
-}
 
-.expiration input {
-  width: 3rem;
-  border: 0;
-  padding-left: 10px;
-}
+@media (min-width: 768px) { 
+  .list-instructions {
+    padding: 0;
+  }
+ }

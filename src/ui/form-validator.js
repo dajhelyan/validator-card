@@ -8,24 +8,24 @@ export const validatorPage = () => {
 			<img class='logo-nav' src="./assets/icons/logo-nav.png" width="50" height="50" alt="">
 		</a>
 	</nav>
-	<div class="container background-secundary-color pb-4">
+	<div class="container-fluid background-secundary-color pb-5">
     <div class="row">
-			<div class="col-12 pt-3">
+			<div class="col-12 col-md-6 offset-md-3 pt-3">
 				<h4>Modo de uso:</h4>
       </div>
-      <div class="col-4">
+      <div class="col-4 col-md-3 offset-md-3 text-center">
         <picture>
           <img src="./assets/icons/todo-icon.png" class="" alt="">
         </picture>
       </div>
-      <div class="col-8">
+      <div class="col-8 col-md-4">
 				<ul class="list-instructions">
 					<li>Seleccionar la tarjeta a validar.</li>
 					<li>Ingresar los datos de la tarjeta y validar.</li>
         </ul>
       </div>
     </div>
-    <div class="container cont-form-validator pb-4">
+    <div class="container cont-form-validator pb-3">
       <div class="row">
         <div class="col">
           <form>
@@ -35,7 +35,7 @@ export const validatorPage = () => {
               </div>
             </div>
             <div class="form-row">
-              <div class="form-group">
+              <div class="form-group mx-auto">
                 <h5>Selecciona el tipo de tarjeta a validar:</h5>
               </div>
             </div>
@@ -43,34 +43,18 @@ export const validatorPage = () => {
               <div class="form-group mx-auto">
                 <div class="col">
                   <button type="button" class="btn btn-sm btn-outline-primary">
-                    Visa<span><img src="./assets/icons/icon-visa.png" width="50" height="50"></span>
+                    Visa<span><img src="./assets/icons/icon-visa.png" width="40" height="40"></span>
                   </button>
                   <button type="button" class="btn btn-outline-warning">
-                    Mastercard<span><img src="./assets/icons/icons-mastercard.png" width="50" height="50"></span>
+                    Mastercard<span><img src="./assets/icons/icons-mastercard.png" width="40" height="40"></span>
                   </button>
                 </div>  
               </div>
             </div>
             <div class="form-row">
-              <div class="form-group">
-                <p>Numero de tarjeta</p>
+              <div class="form-group mx-auto">
+                <h5>Numero de tarjeta</h5>
                 <input type="number" class="form-control" placeholder="xxxxxxxxxxxxxxxxx">
-              </div>
-              <div class="form-row">
-                <div class="col-6">
-                  <p>Caducidad</p>
-                  <div class="border-input-date">
-                    <span class="expiration">
-                      <input type="number"  name="month" placeholder="MM" max="2" min="0" />
-                      <span>/</span>
-                      <input type="number" name="year" placeholder="YY" max="2" min="0" />
-                    </span>
-                  </div>
-                </div>
-                <div class="col-4">  
-                  <p>CVV</p>
-                  <input type="number" class="form-control" placeholder="xxx">
-                </div>
               </div>
             </div>
           </form>
