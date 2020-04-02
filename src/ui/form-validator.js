@@ -2,7 +2,7 @@ import { validatorCard } from '../lib/validator.js'
 import { showModal } from './modal.js'
  
 export const validatorPage = () => {
-  const sectionElem = document.createElement('secction');
+  const sectionElem = document.createElement('section');
 	sectionElem.innerHTML = `
 	<nav class="navbar navbar-light">
 		<a class="navbar-brand" href="#">
@@ -66,10 +66,11 @@ export const validatorPage = () => {
 	</div>
   `
 
-  const captureValueInput = sectionElem.querySelector('.btn-validate-card')
+  const captureValueInput = sectionElem.querySelector('#btn-validate-card')
   captureValueInput.addEventListener('click', () => {
     const inputCardValue = document.getElementById("input-card-number").value;
     console.log(validatorCard(inputCardValue), 'kfjjf');
+    /* condicion que verifica si el valor de retorno de la funcion es true para mostrar un modal */
     if(validatorCard(inputCardValue) === true) {
       console.log('modal')
       showModal(sectionElem)

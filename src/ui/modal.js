@@ -1,4 +1,4 @@
-
+/* funcion que recibe un elemento al que agregara como nodo hijo el modal */
 export const showModal = (sectionElem) => {
   const dialogElem = document.createElement("section");
   dialogElem.innerHTML= `

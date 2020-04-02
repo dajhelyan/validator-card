@@ -1,6 +1,6 @@
 
-export const validatorCard = (num) => {
-  let arrNumCard = num.split('').reverse() /* destructurando el string e invirtiendo los numeros del array */
+export const validatorCard = (creditCardNumber) => {
+  let arrNumCard = creditCardNumber.split('').reverse() /* destructurando el string e invirtiendo los numeros del array */
   /* convirtiendo cada string en numero */
   .map((ele, index) => { /* deberia recorrer el array y solo en los numeros que esten en las posiciones impares ejecutar el algoritmo */
     let parseElem = parseInt(ele)
@@ -20,3 +20,15 @@ export const validatorCard = (num) => {
     return sum % 10 === 0 ? true : false;
 }
 
+export const maskifyString = (creditCardNumber) => {
+  let lengthStr = creditCardNumber.length;
+
+  if(lengthStr <= 4) {
+    return creditCardNumber;
+  }
+
+  return creditCardNumber.split('').map((ele, index) => {
+    /* ternario que retorna true solo a los 4 ultimos elementos, si es false retorna "#" */
+    return (lengthStr - index <= 4) ? ele : '#';
+  }).join('');
+}
