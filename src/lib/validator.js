@@ -17,13 +17,6 @@ export const validatorCard = (num) => {
   const sum = arrNumCard.reduce((a, c) => {
       return a + c;
     }, 0) 
-    if(sum % 10 === 0) {
-      console.log('la tarjeta es valida')
-    } else {
-      console.log('la tarjeta es invalida')
-    }
-      console.log(sum, '0')
-
-  console.log(arrNumCard, 'm')
+    return sum % 10 === 0 ? true : false;
 }
 

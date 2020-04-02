@@ -1,4 +1,5 @@
 import { validatorCard } from '../lib/validator.js'
+import { showModal } from './modal.js'
  
 export const validatorPage = () => {
   const sectionElem = document.createElement('secction');
@@ -8,7 +9,7 @@ export const validatorPage = () => {
 			<img class='logo-nav' src="./assets/icons/logo-nav.png" width="50" height="50" alt="">
 		</a>
 	</nav>
-	<div class="container-fluid background-secundary-color pb-5">
+	<div class="container-fluid background-secundary-color pb-4">
     <div class="row">
 			<div class="col-12 col-md-6 offset-md-3 pt-3">
 				<h4>Modo de uso:</h4>
@@ -55,8 +56,8 @@ export const validatorPage = () => {
               <div class="form-group mx-auto">
                 <h5>Numero de tarjeta</h5>
                 <input id="input-card-number" type="number" class="form-control" placeholder="xxxxxxxxxxxxxxxxx">
-                <button id="btn-validate-card" type="button" class="btn btn-primary mb-2">Validar ahora</button>
-                </div>
+                <button id="btn-validate-card" type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#exampleModal">Validar ahora</button>
+              </div>
             </div>
           </form>
         </div>
@@ -65,13 +66,18 @@ export const validatorPage = () => {
 	</div>
   `
 
-  //const inputCardValue = document.querySelector('#input card-number').value;
-
-  const captureValueInput = sectionElem.querySelector('#btn-validate-card')
+  const captureValueInput = sectionElem.querySelector('.btn-validate-card')
   captureValueInput.addEventListener('click', () => {
     const inputCardValue = document.getElementById("input-card-number").value;
     console.log(validatorCard(inputCardValue), 'kfjjf');
+    if(validatorCard(inputCardValue) === true) {
+      console.log('modal')
+      showModal(sectionElem)
+    }else {
+      console.log('no modal')
+    }
   })
 
 	return sectionElem;
 }
+
