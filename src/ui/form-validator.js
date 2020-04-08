@@ -1,12 +1,12 @@
-import { validatorCard } from '../lib/validator.js'
-import { showModal } from './modal.js'
+import { validateField, validatorCard, maskify } from '../lib/validator.js'
+import { showModal } from './modal.js';
  
 export const validatorPage = () => {
   const sectionElem = document.createElement('section');
 	sectionElem.innerHTML = `
 	<nav class="navbar navbar-light">
 		<a class="navbar-brand" href="#">
-			<img class='logo-nav' src="./assets/icons/logo-nav.png" width="50" height="50" alt="">
+			<img class="logo-nav" src="./assets/icons/logo-nav.png" width="50" height="50" alt="">
 		</a>
 	</nav>
 	<div class="container-fluid background-secundary-color pb-4">
@@ -55,8 +55,9 @@ export const validatorPage = () => {
             <div class="form-row">
               <div class="form-group mx-auto">
                 <h5>Numero de tarjeta</h5>
-                <input id="input-card-number" type="number" class="form-control" placeholder="xxxxxxxxxxxxxxxxx">
-                <button id="btn-validate-card" type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#exampleModal">Validar ahora</button>
+                <input id="input-card-number" type="number" class="form-control col-12" placeholder="xxxxxxxxxxxxxxxxx">
+                <span class="col-12" id="error-mesagge"></span>
+                <button id="btn-validate-card" type="button" class="btn btn-primary col-12 mt-2" data-toggle="modal" data-target="#exampleModal">Validar ahora</button>
               </div>
             </div>
           </form>
@@ -66,17 +67,25 @@ export const validatorPage = () => {
 	</div>
   `
 
-  const captureValueInput = sectionElem.querySelector('#btn-validate-card')
+  
+  const errorMesagge = sectionElem.querySelector('#error-mesagge');
+  
+  const captureValueInput = sectionElem.querySelector('#btn-validate-card');
   captureValueInput.addEventListener('click', () => {
+    
     const inputCardValue = document.getElementById("input-card-number").value;
-    console.log(validatorCard(inputCardValue), 'kfjjf');
+
+    document.getElementById("input-card-number").innerHTML = maskify(inputCardValue);
+
     /* condicion que verifica si el valor de retorno de la funcion es true para mostrar un modal */
-    if(validatorCard(inputCardValue) === true) {
+    validateField(inputCardValue, errorMesagge);
+
+    /* if(validatorCard(inputCardValue) === true) {
       console.log('modal')
       showModal(sectionElem)
     }else {
       console.log('no modal')
-    }
+    }  */
   })
 
 	return sectionElem;

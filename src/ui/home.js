@@ -60,8 +60,8 @@ export const homePage = () => {
   </div>  
   `
 
-  const goValiddator = sectionElem.querySelector('#goValidator')
-  goValiddator.addEventListener('click', () => {
+  const goValidator = sectionElem.querySelector('#goValidator')
+  goValidator.addEventListener('click', () => {
     changeView('#/validator');
   })
 
