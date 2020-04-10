@@ -6,7 +6,7 @@ export const validatorPage = () => {
 	sectionElem.innerHTML = `
 	<nav class="navbar navbar-light">
 		<a class="navbar-brand" href="#">
-			<img class="logo-nav" src="./assets/icons/logo-nav.png" width="50" height="50" alt="">
+			<img class="logo-nav" src="./assets/icons/logo-nav.png" width="30" height="30" alt="">
 		</a>
 	</nav>
 	<div class="container-fluid background-secundary-color pb-4">
@@ -67,20 +67,26 @@ export const validatorPage = () => {
 	</div>
   `
 
-  
   const errorMesagge = sectionElem.querySelector('#error-mesagge');
-  
+
   const captureValueInput = sectionElem.querySelector('#btn-validate-card');
   captureValueInput.addEventListener('click', () => {
     
     const inputCardValue = document.getElementById("input-card-number").value;
 
-    document.getElementById("input-card-number").innerHTML = maskify(inputCardValue);
-
+    
+  
+    validateField(inputCardValue, errorMesagge) 
+    console.log(validatorCard(inputCardValue));
     /* condicion que verifica si el valor de retorno de la funcion es true para mostrar un modal */
-    validateField(inputCardValue, errorMesagge);
-
-    /* if(validatorCard(inputCardValue) === true) {
+    switch (validatorCard(inputCardValue) === true) {
+      case true:
+        showModal(sectionElem)
+       break;
+      case false:
+        break;
+    }
+    /* if(validateField(inputCardValue, errorMesagge) === true || validatorCard(inputCardValue) === true) {
       console.log('modal')
       showModal(sectionElem)
     }else {

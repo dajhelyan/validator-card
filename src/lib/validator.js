@@ -1,8 +1,8 @@
 
 
-export const validateField = (creditCardNumber, spanelem) => {
-  if (creditCardNumber === null || creditCardNumber.length > 16 || creditCardNumber.length < 16) {
-    return spanelem.innerHTML = `<small>Los digitos de la tarjeta deben contener 16 digitos.</small>`
+export const validateField = (creditCardNumber, spanElem) => {
+  if (creditCardNumber.length === 0 || creditCardNumber.length > 16 || creditCardNumber.length < 16) {
+    return spanElem.innerHTML = `<p class="error">Los digitos de la tarjeta deben contener 16 digitos.</p class="error">`;
   } else {
     return true;
   }
@@ -26,7 +26,10 @@ export const validatorCard = (creditCardNumber) => {
   const sum = arrNumCard.reduce((a, c) => {
       return a + c;
     }, 0) 
-    return sum % 10 === 0 ? true : false;
+    console.log(sum,'ps');
+    console.log(arrNumCard, 'm')
+  return sum % 10 === 0 ? true : false;
+
 }
 
 export const maskify = (creditCardNumber) => {

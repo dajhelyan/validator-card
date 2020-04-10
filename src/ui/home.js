@@ -5,7 +5,7 @@ export const homePage = () => {
   sectionElem.innerHTML = `
   <nav class="navbar navbar-light">
     <a class="navbar-brand" href="#">
-      <img class='logo-nav' src="./assets/icons/logo-nav.png" width="50" height="50" alt="">
+      <img class='logo-nav' src="./assets/icons/logo-nav.png" width="30" height="30" alt="">
     </a>
   </nav>
   <div class="container-fluid p-0 d-lg-flex ">
