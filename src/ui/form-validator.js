@@ -55,7 +55,7 @@ export const validatorPage = () => {
             <div class="form-row">
               <div class="form-group mx-auto">
                 <h5>Numero de tarjeta</h5>
-                <input id="input-card-number" type="number" class="form-control col-12" placeholder="xxxxxxxxxxxxxxxxx">
+                <input id="input-card-number" class="form-control col-12" placeholder="xxxxxxxxxxxxxxxxx">
                 <span class="col-12" id="error-mesagge"></span>
                 <button id="btn-validate-card" type="button" class="btn btn-primary col-12 mt-2" data-toggle="modal" data-target="#exampleModal">Validar ahora</button>
               </div>
@@ -64,34 +64,28 @@ export const validatorPage = () => {
         </div>
       </div>
     </div>
-	</div>
+    <section id="modal-ele"></section>
+  </div>
   `
 
   const errorMesagge = sectionElem.querySelector('#error-mesagge');
-
+  console.log(errorMesagge);
+  
   const captureValueInput = sectionElem.querySelector('#btn-validate-card');
   captureValueInput.addEventListener('click', () => {
     
-    const inputCardValue = document.getElementById("input-card-number").value;
-
-    
+    const inputCardValue = sectionElem.querySelector("#input-card-number");
+    const cardNumber = inputCardValue.value;
   
-    validateField(inputCardValue, errorMesagge) 
-    console.log(validatorCard(inputCardValue));
-    /* condicion que verifica si el valor de retorno de la funcion es true para mostrar un modal */
-    switch (validatorCard(inputCardValue) === true) {
-      case true:
-        showModal(sectionElem)
-       break;
-      case false:
-        break;
+    inputCardValue.value = maskify(cardNumber)
+        
+    if (validateField(cardNumber, errorMesagge) === true) {
+      const result = validatorCard(cardNumber);
+      showModal(sectionElem, result); 
+    } else {
+      const modalElem = sectionElem.querySelector('#modal-ele');
+      modalElem.innerHTML = '';
     }
-    /* if(validateField(inputCardValue, errorMesagge) === true || validatorCard(inputCardValue) === true) {
-      console.log('modal')
-      showModal(sectionElem)
-    }else {
-      console.log('no modal')
-    }  */
   })
 
 	return sectionElem;

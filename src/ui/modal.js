@@ -1,6 +1,7 @@
 /* funcion que recibe un elemento al que agregara como nodo hijo el modal */
-export const showModal = (sectionElem) => {
-  const dialogElem = document.createElement("section");
+export const showModal = (sectionElem, result) => {
+  /* llamando a elemento dentro sectionElem para setear el modal */
+  const dialogElem = sectionElem.querySelector('#modal-ele');
   dialogElem.innerHTML= `
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -12,7 +13,7 @@ export const showModal = (sectionElem) => {
             </button>
           </div>
           <div class="modal-body">
-            ...
+            <h3 id="message-result"></h3>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -22,5 +23,10 @@ export const showModal = (sectionElem) => {
       </div>
     </div>
   `
+  const messageResult = dialogElem.querySelector('#message-result');
+console.log('modal');
+
+  result ? messageResult.innerHTML = `Su tarjeta es valida` : messageResult.innerHTML = `Su tarjeta es invalida`; 
+
   return sectionElem.appendChild(dialogElem);
 }

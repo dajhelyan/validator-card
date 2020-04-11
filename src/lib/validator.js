@@ -1,14 +1,15 @@
 
-
 export const validateField = (creditCardNumber, spanElem) => {
   if (creditCardNumber.length === 0 || creditCardNumber.length > 16 || creditCardNumber.length < 16) {
-    return spanElem.innerHTML = `<p class="error">Los digitos de la tarjeta deben contener 16 digitos.</p class="error">`;
+    return spanElem.innerHTML = `<p class="error">Los digitos de la tarjeta deben contener 16 digitos.</p>`;
   } else {
     return true;
   }
 } 
 
 export const validatorCard = (creditCardNumber) => {
+  console.log(creditCardNumber, 'yyy');
+  
   let arrNumCard = creditCardNumber.split('').reverse() /* destructurando el string e invirtiendo los numeros del array */
   /* convirtiendo cada string en numero */
   .map((ele, index) => { /* deberia recorrer el array y solo en los numeros que esten en las posiciones impares ejecutar el algoritmo */
