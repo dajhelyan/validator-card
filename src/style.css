@@ -1,3 +1,15 @@
+.root {
+  height: 100vh;
+}
+
+.root section {
+  height: 100vh;
+}
+
+.height-container-calc {
+  height: calc(100vh - 58px);
+}
+ 
 .error {
   color: red;
 }
@@ -22,9 +34,6 @@
   font-family: 'Domine', serif;
 }
 
-/* .form-control {
-  max-width: 18rem!important;
-} */
 
 @media (min-width: 992px) { 
  .img-card {
@@ -34,32 +43,41 @@
  .btn {
    width: 10rem;
  }
+
+ .row-instructions {
+   padding-bottom: 1rem;
+ }
+
+ .row-instructions div h4 {
+  padding-left: 2em;
+  font-size: 25px;
+ }
+
+ .row-instructions div .todo-icon {
+   width: 125px;
+ }
+
+ .row-instructions div .list-instructions {
+   font-size: 20px;
+ }
+
+ .cont-form-validator form-row #input-card-number {
+    width: 18rem;
+ }
+
+  section .cont-validator {
+    height: calc(100vh - 57px);
+  }
+
+  section .cont-home {
+    height: calc(100vh - 30px);
+  }
 }
-
-/* #section-about {
-  height: 70vh;
-} */
-
-/* #main .col h3 { 
-  font-family: 'Monda', sans-serif;
-} */
 
 .div-icon {
   background: #FCF3CF;
   border-radius: 30px;
 }
-
-
-
-/* @media (max-width: 575.98px) { 
-  .row {
-    margin: 0!important;
-  }
-  div .col-md {
-    padding: 0!important;
-  }
-
-} */
 
 .col .list-instructions {
   padding-left: 0;

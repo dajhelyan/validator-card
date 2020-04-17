@@ -1,4 +1,4 @@
-import { validateField, validatorCard, maskify } from '../lib/validator.js'
+import { validateField, validatorCard, maskify, onlyNumbers } from '../lib/validator.js'
 import { showModal } from './modal.js';
  
 export const validatorPage = () => {
@@ -9,18 +9,18 @@ export const validatorPage = () => {
 			<img class="logo-nav" src="./assets/icons/logo-nav.png" width="30" height="30" alt="">
 		</a>
 	</nav>
-	<div class="container-fluid background-secundary-color pb-4">
-    <div class="row">
-			<div class="col-12 col-md-6 offset-md-3 pt-3">
+	<div class="container-fluid cont-validator background-secundary-color pb-4">
+    <div class="row row-instructions">
+			<div class="col-12 col-md-4 offset-md-3 pt-3">
 				<h4>Modo de uso:</h4>
       </div>
       <div class="col-4 col-md-3 offset-md-3 text-center">
         <picture>
-          <img src="./assets/icons/todo-icon.png" class="" alt="">
+          <img src="./assets/icons/todo-icon.png" class="todo-icon" alt="">
         </picture>
       </div>
       <div class="col-8 col-md-4">
-				<ul class="list-instructions">
+				<ul class="list-instructions pt-3 mb-2">
 					<li>Seleccionar la tarjeta a validar.</li>
 					<li>Ingresar los datos de la tarjeta y validar.</li>
         </ul>
@@ -36,8 +36,8 @@ export const validatorPage = () => {
               </div>
             </div>
             <div class="form-row">
-              <div class="form-group mx-auto">
-                <h5>Selecciona el tipo de tarjeta a validar:</h5>
+              <div class="form-group offset-md-3 offset-lg-4">
+                <h5>Selecciona el tipo de tarjeta a validar</h5>
               </div>
             </div>
             <div class="form-row">
@@ -53,11 +53,19 @@ export const validatorPage = () => {
               </div>
             </div>
             <div class="form-row">
-              <div class="form-group mx-auto">
+              <div class="form-group offset-md-3 offset-lg-3 offset-lg-4">
                 <h5>Numero de tarjeta</h5>
-                <input id="input-card-number" class="form-control col-12" placeholder="xxxxxxxxxxxxxxxxx">
-                <span class="col-12" id="error-mesagge"></span>
-                <button id="btn-validate-card" type="button" class="btn btn-primary col-12 mt-2" data-toggle="modal" data-target="#exampleModal">Validar ahora</button>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group mx-auto">
+                <div clasS="col">
+                  <input id="input-card-number" class="form-control col-12" placeholder="xxxxxxxxxxxxxxxxx">
+                </div>
+                <p class="col-12 mb-2" id="error-mesagge"></p>
+                <div class="col">
+                  <button id="btn-validate-card" type="button" class="btn btn-primary ml-5 mt-2" data-toggle="modal" data-target="#showModal">Validar ahora</button>
+                </div>
               </div>
             </div>
           </form>
@@ -67,16 +75,18 @@ export const validatorPage = () => {
     <section id="modal-ele"></section>
   </div>
   `
-
+  const inputCardValue = sectionElem.querySelector("#input-card-number");
   const errorMesagge = sectionElem.querySelector('#error-mesagge');
-  console.log(errorMesagge);
+  const replaceValue = inputCardValue.value
   
+  inputCardValue.value = onlyNumbers(replaceValue);
+
   const captureValueInput = sectionElem.querySelector('#btn-validate-card');
   captureValueInput.addEventListener('click', () => {
     
-    const inputCardValue = sectionElem.querySelector("#input-card-number");
+    
     const cardNumber = inputCardValue.value;
-  
+    
     inputCardValue.value = maskify(cardNumber)
         
     if (validateField(cardNumber, errorMesagge) === true) {
@@ -90,4 +100,3 @@ export const validatorPage = () => {
 
 	return sectionElem;
 }
-

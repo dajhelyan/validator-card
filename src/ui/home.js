@@ -8,8 +8,8 @@ export const homePage = () => {
       <img class='logo-nav' src="./assets/icons/logo-nav.png" width="30" height="30" alt="">
     </a>
   </nav>
-  <div class="container-fluid p-0 d-lg-flex ">
-    <div class="container-fluid background-primary-color">
+  <div class="container-fluid p-0 d-lg-flex height-container-calc">
+    <div class="container-fluid background-primary-color cont-home">
       <div class="row">
         <div class="col text-center pt-2 mt-2 pb-2">
           <h2>Validador de tarjetas</h2>
@@ -40,7 +40,7 @@ export const homePage = () => {
             </div>  
             <div class="card-body">
               <h5 class="card-title">Herramienta</h5>
-              <p class="card-text">Para verificar la valides de la tarjeta antes de hacer una compra</p>
+              <p class="card-text">Esta herramienta fue diseñada para que el usuario pueda verificar la valides de la tarjeta antes de hacer una compra.</p>
             </div>
           </div>
         </div>
