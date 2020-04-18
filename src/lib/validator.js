@@ -1,7 +1,5 @@
 
 export const validateField = (creditCardNumber, spanElem) => {
-  
-
   if (creditCardNumber.length === 0 || creditCardNumber.length > 16 || creditCardNumber.length < 16) {
     return spanElem.innerHTML = `<small class="error">Debe contener 16 digitos.</small>`;
   } else {
@@ -9,14 +7,14 @@ export const validateField = (creditCardNumber, spanElem) => {
   }
 } 
 
-export const onlyNumbers = (inputValue) => {
+/* export const onlyNumbers = (inputValue) => {
   const str = inputValue.charCodeAt();
   if (str <= 48 && str >= 57) {
     return str.fromCharCode();
   } else {
     return "";
   }
-} 
+}  */
 
 export const validatorCard = (creditCardNumber) => {
   console.log(creditCardNumber, 'yyy');
