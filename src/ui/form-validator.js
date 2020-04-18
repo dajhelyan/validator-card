@@ -1,4 +1,4 @@
-const { validateField, validatorCard, maskify } = require('../lib/validator.js')
+import { validateField, validatorCard, maskify } from '../lib/validator.js';
 import { showModal } from './modal.js';
  
 export const validatorPage = () => {
@@ -77,10 +77,10 @@ export const validatorPage = () => {
   `
   const inputCardValue = sectionElem.querySelector("#input-card-number");
   const errorMesagge = sectionElem.querySelector('#error-mesagge');
-  const replaceValue = inputCardValue.value
-  
-  inputCardValue.value = onlyNumbers(replaceValue);
-
+/*   const replaceValue = inputCardValue.value
+ */  
+/*   inputCardValue.value = onlyNumbers(replaceValue);
+ */
   const captureValueInput = sectionElem.querySelector('#btn-validate-card');
   captureValueInput.addEventListener('click', () => {
     

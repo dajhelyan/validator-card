@@ -1,5 +1,5 @@
 
-const validateField = (creditCardNumber, spanElem) => {
+export const validateField = (creditCardNumber, spanElem) => {
   if (creditCardNumber.length === 0 || creditCardNumber.length > 16 || creditCardNumber.length < 16) {
     return spanElem.innerHTML = `<small class="error">Debe contener 16 digitos.</small>`;
   } else {
@@ -7,7 +7,8 @@ const validateField = (creditCardNumber, spanElem) => {
   }
 } 
 
-/* const onlyNumbers = (inputValue) => {
+
+/* export const onlyNumbers = (inputValue) => {
   const str = inputValue.charCodeAt();
   if (str <= 48 && str >= 57) {
     return str.fromCharCode();
@@ -16,7 +17,7 @@ const validateField = (creditCardNumber, spanElem) => {
   }
 }  */
 
-const validatorCard = (creditCardNumber) => {
+export const validatorCard = (creditCardNumber) => {
   console.log(creditCardNumber, 'yyy');
   
   let arrNumCard = creditCardNumber.split('').reverse() /* destructurando el string e invirtiendo los numeros del array */
@@ -42,7 +43,7 @@ const validatorCard = (creditCardNumber) => {
 
 }
 
-const maskify = (creditCardNumber) => {
+export const maskify = (creditCardNumber) => {
   let lengthStr = creditCardNumber.length;
 
   if(lengthStr <= 4) {
@@ -54,5 +55,3 @@ const maskify = (creditCardNumber) => {
     return (lengthStr - index <= 4) ? ele : '#';
   }).join('');
 }
-
-module.exports = { validateField, validatorCard, maskify }

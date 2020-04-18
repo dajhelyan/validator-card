@@ -1,4 +1,4 @@
-import { changeView } from '../lib/routes.js'
+import { changeView } from '../lib/routes.js';
 
 export const homePage = () => {
   const sectionElem = document.createElement('section');

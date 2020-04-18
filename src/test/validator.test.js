@@ -1,4 +1,5 @@
-const { validateField, validatorCard, maskify } = require('../lib/validator')
+
+import { validateField, validatorCard, maskify } from '../lib/validator.js';
 
 const inputCardNum = '4556364607935616';
 const inputCardNum2 = '4559'
