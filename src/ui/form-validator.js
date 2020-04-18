@@ -1,4 +1,4 @@
-import { validateField, validatorCard, maskify, onlyNumbers } from '../lib/validator.js'
+const { validateField, validatorCard, maskify } = require('../lib/validator.js')
 import { showModal } from './modal.js';
  
 export const validatorPage = () => {
